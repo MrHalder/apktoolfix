@@ -2,7 +2,7 @@
 
 #Author: graylagx2
 #Name: apktoolfix
-#Version: 2.1.2
+#Version: 2.1.3
 #Description: This bash script automates the process of fixing/installing a working 
 #             version of apktool. It also checks on system requirments to verify
 #             the script will have no issues working.
@@ -42,7 +42,7 @@ echo '
         |_______|__| |___._|___  |_______|___._|___  |__.__|______|
                            |_____|             |_____|             
 '                                                                     
-echo -e "${YELLOW}                           Apktool-Fix Version ${BLUE}2.1.2${RESTORE}\n"
+echo -e "${YELLOW}                           Apktool-Fix Version ${BLUE}2.1.3${RESTORE}\n"
 echo -e "${L_GREY}This script was developed to be used with the kali-linux distribution any use outside of this distribution may not work${RESTORE}\n"
 sleep 2
                                                       
@@ -106,11 +106,11 @@ fi
 # Upgrade and install latest version of apktool
 APKTOOL_UPGRADE() {
     (wget -O /usr/bin/apktool https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool &>/dev/null;
-     wget -O /usr/bin/apktool.jar https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.4.1.jar &>/dev/null;
+     wget -O /usr/bin/apktool.jar https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.9.3.jar &>/dev/null;
      [[ -e /usr/bin/apktool ]] && [[ -e /usr/bin/apktool.jar ]] && chmod +x /usr/bin/apktool /usr/bin/apktool.jar) &
     echo
-    PROG_MESSAGE="${YELLOW}Installing Apktool 2.4.1${RESTORE}"
-    COMP_MESSAGE="${YELLOW}Installed Apktool 2.4.1${RESTORE}"
+    PROG_MESSAGE="${YELLOW}Installing Apktool 2.9.3${RESTORE}"
+    COMP_MESSAGE="${YELLOW}Installed Apktool 2.9.3${RESTORE}"
     spinLoader
     [[ -e /root/.local/share/apktool/framework/1.apk ]] && apktool empty-framework-dir --force &>/dev/null && echo -e "\n${YELLOW}  Emptying framework-dir" 
     APKTOOL_VERSION
